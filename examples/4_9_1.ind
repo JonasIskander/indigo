@@ -1,0 +1,24 @@
+# Example 4.9.1
+
+Type|Bool1;
+
+@foo {
+    Bool1|true;
+    Bool1|false;
+    
+    Bool1.negate ~ Bool1;
+    Bool1 [true.negate] ~ false;
+    Bool1 [false.negate] ~ true;
+
+    Type|Bool2;
+    Bool2|true;
+    Bool2|false;
+
+    Bool2.negate ~ Bool2;
+    
+    Bool2 [true.negate] ~ false;
+    Bool2 [false.negate] ~ true;
+}
+
+$Bool1 [foo:true.foo:negate];    # (1) prints 'foo:false'
+$foo:Bool2 [true.negate];        # (2) prints 'false'

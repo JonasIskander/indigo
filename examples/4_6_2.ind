@@ -1,0 +1,38 @@
+# Example 4.6.2
+
+# Declare abstract types for sounds, names, and animals.
+
+Type|Sound;
+
+Type|Name;
+
+Type|Animal;
+Animal.make_sound ~ Sound;
+Animal.name ~ Name;
+
+# Introduce cats.
+
+Sound|meow;
+
+Type|Cat;
+Cat.name ~ Name;
+
+Animal|the_cat Cat [cat];
+Animal [the_cat (cat).make_sound] ~ meow;
+Animal [the_cat (cat).name] ~ (cat.name);
+
+# Introduce Patrick and Penelope.
+
+Name|patrick;
+Name|penelope;
+
+Cat|cat_1;
+Cat [cat_1.name] ~ patrick;
+
+Cat|cat_2;
+Cat [cat_2.name] ~ penelope;
+
+# Tests.
+
+$Animal [the_cat cat_1.name];    # prints 'patrick'
+$Animal [the_cat cat_2.name];    # prints 'penelope'

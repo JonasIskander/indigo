@@ -1,0 +1,14 @@
+# Example 4.5.3
+
+Type|Nat;
+Nat|zero;
+Nat|succ Nat [n];
+
+Nat.add Nat [x] ~ Nat;
+Nat [zero.add (x)] ~ (x);
+Nat [succ (n).add (x)] ~ succ (n.add (x));
+
+Type|Void;
+Void|void;
+Void.add_zero Nat [x] ~ Nat;
+Void [void.add_zero (x)] ~ $Nat [zero.add (x)];    # (4)

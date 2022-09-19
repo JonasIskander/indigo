@@ -1,0 +1,23 @@
+# Example 4.4.1
+
+Type|Bool;
+Bool|true;
+Bool|false;
+
+Bool.negate ~ Bool;              # (1)
+Bool [true.negate] ~ false;      # (2)
+Bool [false.negate] ~ true;      # (3)
+
+$Bool [true.negate];             # prints 'false'
+$Bool [false.negate];            # prints 'true'
+
+Bool.and Bool [x] ~ Bool;        # (6)
+Bool [true.and (x)] ~ (x);       # (7)
+Bool [false.and (x)] ~ false;    # (8)
+
+Bool.or Bool [x] ~ Bool;         # (9)
+Bool [true.or (x)] ~ true;       # (10)
+Bool [false.or (x)] ~ (x);       # (11)
+
+$Bool [true.or false];           # prints 'true'
+$Bool [true.and false];          # prints 'false'

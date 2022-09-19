@@ -1,0 +1,7 @@
+# Example 4.2.4
+
+Type|Even;
+Type|Odd;
+Even|zero;
+Even|succ Odd [n];
+Odd|succ Even [n];

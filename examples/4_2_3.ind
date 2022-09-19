@@ -1,0 +1,5 @@
+# Example 4.2.3
+
+Type|Tree;
+Tree|leaf;
+Tree|branch Tree [lhs] Tree [rhs];

@@ -1,0 +1,5 @@
+# Example 4.2.2
+
+Type|Nat;
+Nat|zero;
+Nat|succ Nat [n];

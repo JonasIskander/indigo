@@ -1,0 +1,19 @@
+# Example 4.5.1
+
+Type|Nat;
+Nat|zero;
+Nat|succ Nat [n];
+
+Nat.add Nat [x] ~ Nat;
+Nat [zero.add (x)] ~ (x);
+Nat [succ (n).add (x)] ~ succ (n.add (x));       # (1)
+
+Nat.mul Nat [x] ~ Nat;
+Nat [zero.mul (x)] ~ zero;
+Nat [succ (n).mul (x)] ~ (n.mul (x).add (x));    # (2)
+
+# Q: what is 2+2? A: 4.
+$Nat [succ succ zero.add succ succ zero];        # prints 'succ succ succ succ zero'
+
+# Q: what is 2*2? A: 4.
+$Nat [succ succ zero.mul succ succ zero];        # prints 'succ succ succ succ zero'

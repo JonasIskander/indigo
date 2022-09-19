@@ -1,0 +1,14 @@
+# Example 4.9.2
+
+@foo {
+    Type|A;
+    A|a;
+}
+
+@foo {
+    Type|B;
+    B|b foo:A [x];    # (3)
+}
+
+$foo:A [a];
+$foo:B [b a];

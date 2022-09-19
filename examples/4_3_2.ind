@@ -1,0 +1,7 @@
+# Example 4.3.2 !?
+
+Type|Bool;
+Bool|true;
+Bool|false;
+
+$Bool [frue];

@@ -1,0 +1,20 @@
+# Example 4.7.2
+
+Type|Nat;
+Nat|zero;
+Nat|succ Nat [n];
+
+# In addition to 'Nat', define a singleton type 'Void'
+Type|Void;
+Void|void;
+
+# Also define a type of pairs consisting of an element of type 'X' and an element of type 'Y'.
+Type|Pair Type [X] Type [Y];
+Pair (X) (Y)|pair (X) [x] (Y) [y];
+
+# Treat "the type of arrays consisting of 'n' elements of type 'X'" as a destructor operating on 'n'
+Nat.Array Type [X] ~ Type;
+Nat [zero.Array (X)] ~ Void;
+Nat [succ (n).Array (X)] ~ Pair (X) (n.Array (X));
+
+$Nat [succ succ zero.Array Nat];    # † prints 'Pair Nat Pair Nat Void'

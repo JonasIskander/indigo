@@ -1,0 +1,11 @@
+# Example 4.7.1
+
+Type|List Type [X];
+List (X)|nil;
+List (X)|cons (X) [x] List (X) [v];
+
+Type|Bool;
+Bool|true;
+Bool|false;
+
+$List Bool [cons true cons false nil];

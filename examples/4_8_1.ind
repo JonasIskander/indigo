@@ -1,0 +1,34 @@
+# Example 4.8.1
+
+# We will treat all static functions as methods on 'O'.
+
+Type|O;
+O|*;
+
+# Define natural numbers, together with addition.
+
+Type|Nat;
+Nat|zero;
+Nat|succ Nat [n];
+
+Nat.add Nat [x] ~ Nat;
+Nat [zero.add (x)] ~ (x);
+Nat [succ (n).add (x)] ~ succ (n.add (x));
+
+# Define aliases for one and addition as methods on 'O'.
+
+O.one ~ Nat;
+O[*.one] ~ succ zero;
+
+O.add Nat [x] Nat [y] ~ Nat;
+O[*.add (x) (y)] ~ (x.add (y));
+
+$O[*.one];                                               # prints 'succ zero'
+$O[*.add $O[*.one] $O[*.one]];                           # prints 'succ succ zero'
+
+O.add_2 Nat [x] Nat [y] ~ Nat;
+O [*.add_2 (x) (y)] ~ $O [*.add (x) (y)];                # (1) unrolls to '(x.add (y))'
+O.add_delayed O[o] Nat [x] Nat [y] ~ Nat;
+O [*.add_delayed (o) (x) (y)] ~ (o.add (x) (y));    # (2) does not unroll
+
+$O[*.add_delayed * $O[*.one] $O[*.one]];                 # (3) prints 'succ succ zero'
