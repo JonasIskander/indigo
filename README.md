@@ -537,6 +537,6 @@ $foo:B [b a];         # prints 'b a'
 
 # 6. Additional remarks
 
-## Parsability and readability
+## 6.1. Parsability and readability
 
 In Indigo, expressions that do not refer to any variables never require (indeed are never allowed to have) parentheses because the interpreter keeps track of how many of each kind of expression it expects as it goes. For simple examples, this can be kind of convenient, but for more complicated ones, it can mean that expressions are difficult to parse manually.
