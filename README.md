@@ -269,7 +269,7 @@ $Nat [succ succ zero.mul succ succ zero];        # † prints 'succ succ succ su
 
 ```
 
-(† If these expressions seem confusing, that's because they are; see [this remark](#parsability-and-readability).)
+(† If these expressions seem confusing, that's because they are; see [this remark](#61-parsability-and-readability).)
 
 Note that in line (1), the destructor `add` is called within the same set of parentheses as `n`, and that in line (2), the destructors `mul (x)` and `add (x)` are called in sequence. In general, an **evaluation**, which is an expression contained in a set of parentheses, consists of a variable (the caller) together with a sequence of **destructions** (expressions starting with a `.` followed by a destructor name).
 
@@ -404,7 +404,7 @@ Bool|false;
 
 $List Bool [cons true cons false nil];    # †
 ```
-(† See [this remark](#parsability-and-readability))
+(† See [this remark](#61-parsability-and-readability))
 
 The main new concept that this example introduces is that *constructors and destructors can refer to type arguments*.
 
@@ -432,7 +432,7 @@ Nat [succ (n).Array (X)] ~ Pair (X) (n.Array (X));
 
 $Nat [succ succ zero.Array Nat];    # † prints 'Pair Nat Pair Nat Void'
 ```
-(† See [this remark](#parsability-and-readability))
+(† See [this remark](#61-parsability-and-readability))
 
 ## 4.8. Static functions and delayed evaluation
 
